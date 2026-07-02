@@ -1,0 +1,466 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 Calibri;}{\f1 Consolas;}}
+\paperw11906\paperh16838\margl1440\margr1440\margt1440\margb1440
+\fs24
+\pard\qc\b\fs36 Technical Report\b0\fs24\par\pard\par
+\par
+\pard\b\fs30 Academic Transcript Generation System\b0\fs24\par
+\par
+\pard Student Name: Assiyaw Lawrence  \par
+\pard Student ID: MS/ITE/25/0052  \par
+\pard Course: INF811D Object Oriented Programming  \par
+\pard Project Type: Java Swing Desktop Application  \par
+\pard Project Title: Academic Transcript Generation System  \par
+\pard Submission Date: July 2026\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 Table of Contents\b0\fs24\par
+\par
+\pard\li360 1. Abstract\par\pard
+\pard\li360 2. Introduction\par\pard
+\pard\li360 3. Problem Statement\par\pard
+\pard\li360 4. Aim and Objectives\par\pard
+\pard\li360 5. Scope of the System\par\pard
+\pard\li360 6. System Requirements\par\pard
+\pard\li360 7. System Design\par\pard
+\pard\li360 8. Object Oriented Programming Concepts Applied\par\pard
+\pard\li360 9. Implementation Details\par\pard
+\pard\li360 10. Testing and Validation\par\pard
+\pard\li360 11. User Guide\par\pard
+\pard\li360 12. Challenges and Solutions\par\pard
+\pard\li360 13. Conclusion\par\pard
+\pard\li360 14. Recommendations\par\pard
+\pard\li360 15. References\par\pard
+\pard\li360 16. Appendix\par\pard
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 1. Abstract\b0\fs24\par
+\par
+\pard The Academic Transcript Generation System is a Java Swing desktop application developed to help a registrar record student course results and generate academic transcripts. The system stores student details, semester records, courses, scores, grades, grade points, semester GPA, cumulative GPA, and degree classification. It applies Object Oriented Programming principles such as encapsulation, inheritance, polymorphism, and abstraction through a well-structured class design.\par
+\par
+\pard The application provides a graphical user interface where the registrar logs in, selects or adds a student, enters course results, and views an official or unofficial transcript. It also supports transcript printing and text export. The system demonstrates modular programming by separating the project into model, service, formatter, exception, and graphical user interface packages.\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 2. Introduction\b0\fs24\par
+\par
+\pard Academic institutions need accurate and organized systems for processing student results. A transcript is an important academic document because it summarizes a student's courses, grades, GPA, CGPA, and classification. Manual transcript preparation can lead to errors in calculation, missing records, and delays.\par
+\par
+\pard This project was developed as an Object Oriented Programming practical application. It uses Java Swing for the graphical user interface and Java classes to model real-world academic objects such as students, courses, semester records, course results, and transcripts.\par
+\par
+\pard The project focuses on showing how OOP concepts can be used to solve a real academic record problem in a clean and understandable way.\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 3. Problem Statement\b0\fs24\par
+\par
+\pard Many transcript processes require repeated manual calculations. This can create the following problems:\par
+\par
+\pard\li360\fi-180 ? Wrong GPA or CGPA calculations.\par\pard
+\pard\li360\fi-180 ? Difficulty organizing course results by semester.\par\pard
+\pard\li360\fi-180 ? Repetition when preparing transcript records.\par\pard
+\pard\li360\fi-180 ? Poor validation of student details, scores, and credit hours.\par\pard
+\pard\li360\fi-180 ? Lack of a simple interface for entering and viewing transcript information.\par\pard
+\par
+\pard The Academic Transcript Generation System addresses these problems by automating result entry, grade conversion, GPA calculation, CGPA calculation, classification, and transcript display.\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 4. Aim and Objectives\b0\fs24\par
+\par
+\pard\b\fs26 Aim\b0\fs24\par
+\par
+\pard The aim of this project is to design and implement an Academic Transcript Generation System using Java Swing and Object Oriented Programming principles.\par
+\par
+\pard\b\fs26 Objectives\b0\fs24\par
+\par
+\pard The objectives are to:\par
+\par
+\pard\li360 1. Create a registrar login interface.\par\pard
+\pard\li360 2. Allow the registrar to add and select students.\par\pard
+\pard\li360 3. Allow course results to be added under semesters.\par\pard
+\pard\li360 4. Convert raw scores into grades and grade points.\par\pard
+\pard\li360 5. Calculate semester GPA automatically.\par\pard
+\pard\li360 6. Calculate cumulative GPA across all semesters.\par\pard
+\pard\li360 7. Determine degree classification from CGPA.\par\pard
+\pard\li360 8. Display transcript information in official and unofficial formats.\par\pard
+\pard\li360 9. Demonstrate OOP concepts in a working Java application.\par\pard
+\pard\li360 10. Provide a simple way to print or export transcript information.\par\pard
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 5. Scope of the System\b0\fs24\par
+\par
+\pard The system covers the following functions:\par
+\par
+\pard\li360\fi-180 ? Registrar authentication.\par\pard
+\pard\li360\fi-180 ? Student record management.\par\pard
+\pard\li360\fi-180 ? Course result entry.\par\pard
+\pard\li360\fi-180 ? Core and elective course classification.\par\pard
+\pard\li360\fi-180 ? Raw score to grade conversion.\par\pard
+\pard\li360\fi-180 ? GPA and CGPA calculation.\par\pard
+\pard\li360\fi-180 ? Degree classification.\par\pard
+\pard\li360\fi-180 ? Transcript viewing.\par\pard
+\pard\li360\fi-180 ? Transcript printing.\par\pard
+\pard\li360\fi-180 ? Transcript text export.\par\pard
+\par
+\pard The system is designed as a desktop application. It uses in-memory data storage, meaning that data entered during a session is available while the application is running. A future version can add database storage.\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 6. System Requirements\b0\fs24\par
+\par
+\pard\b\fs26 Hardware Requirements\b0\fs24\par
+\par
+\pard\li360\fi-180 ? A computer capable of running Java.\par\pard
+\pard\li360\fi-180 ? At least 2 GB RAM.\par\pard
+\pard\li360\fi-180 ? Keyboard and mouse.\par\pard
+\pard\li360\fi-180 ? Printer, if transcript printing is required.\par\pard
+\par
+\pard\b\fs26 Software Requirements\b0\fs24\par
+\par
+\pard\li360\fi-180 ? Java Development Kit, version 17 or later.\par\pard
+\pard\li360\fi-180 ? Windows operating system.\par\pard
+\pard\li360\fi-180 ? Command Prompt or PowerShell.\par\pard
+\pard\li360\fi-180 ? Git, if the project will be uploaded to GitHub.\par\pard
+\par
+\pard\b\fs26 Development Tools\b0\fs24\par
+\par
+\pard\li360\fi-180 ? Java programming language.\par\pard
+\pard\li360\fi-180 ? Java Swing GUI library.\par\pard
+\pard\li360\fi-180 ? Git for version control.\par\pard
+\pard\li360\fi-180 ? GitHub for remote repository hosting.\par\pard
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 7. System Design\b0\fs24\par
+\par
+\pard\b\fs26 7.1 Package Structure\b0\fs24\par
+\par
+\pard The system is organized into packages to support modular programming.\par
+\par
+\f1\fs20 src/com/lawrence/transcript/\par
+\f1\fs20   Main.java\par
+\f1\fs20   TestHarness.java\par
+\f1\fs20   exception/\par
+\f1\fs20   formatter/\par
+\f1\fs20   gui/\par
+\f1\fs20   model/\par
+\f1\fs20   service/\par
+\par
+\pard\b\fs26 7.2 Main Packages\b0\fs24\par
+\par
+\pard | Package | Purpose |\par
+\pard |---|---|\par
+\pard | model | Contains the main domain classes such as Student, Course, SemesterRecord, and Transcript. |\par
+\pard | service | Contains business logic such as login, GPA services, classification, and student repository operations. |\par
+\pard | formatter | Contains transcript formatting classes. |\par
+\pard | exception | Contains the custom validation exception. |\par
+\pard | gui | Contains Java Swing user interface classes. |\par
+\par
+\pard\b\fs26 7.3 System Flow\b0\fs24\par
+\par
+\pard\li360 1. Registrar opens the application.\par\pard
+\pard\li360 2. Registrar logs in with username and PIN.\par\pard
+\pard\li360 3. Registrar selects an existing student or adds a new student.\par\pard
+\pard\li360 4. Registrar adds course results for a semester.\par\pard
+\pard\li360 5. The system converts the score to a grade.\par\pard
+\pard\li360 6. The system calculates quality points, GPA, CGPA, and classification.\par\pard
+\pard\li360 7. Registrar views the transcript.\par\pard
+\pard\li360 8. Registrar prints or exports the transcript.\par\pard
+\par
+\pard\b\fs26 7.4 GPA and CGPA Formula\b0\fs24\par
+\par
+\pard For each course:\par
+\par
+\f1\fs20 Quality Points = Grade Point * Credit Hours\par
+\par
+\pard For a semester:\par
+\par
+\f1\fs20 Semester GPA = Total Quality Points for Semester / Total Semester Credit Hours\par
+\par
+\pard For all semesters:\par
+\par
+\f1\fs20 CGPA = Total Quality Points Across All Semesters / Total Credit Hours Across All Semesters\par
+\par
+\pard\b\fs26 7.5 Degree Classification\b0\fs24\par
+\par
+\pard | CGPA Range | Classification |\par
+\pard |---|---|\par
+\pard | 3.60 and above | First Class |\par
+\pard | 3.00 to 3.59 | Second Class Upper |\par
+\pard | 2.50 to 2.99 | Second Class Lower |\par
+\pard | 2.00 to 2.49 | Third Class |\par
+\pard | Below 2.00 | Pass / Fail |\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 8. Object Oriented Programming Concepts Applied\b0\fs24\par
+\par
+\pard\b\fs26 8.1 Encapsulation\b0\fs24\par
+\par
+\pard Encapsulation is used by making class fields private and providing public methods to access them. Examples include:\par
+\par
+\pard\li360\fi-180 ? `Course` stores `code`, `title`, and `creditHours` as private fields.\par\pard
+\pard\li360\fi-180 ? `Student` stores `id`, `name`, `programme`, and semester records as private fields.\par\pard
+\pard\li360\fi-180 ? `CourseResult` stores the course, score, and grade as private fields.\par\pard
+\par
+\pard This prevents direct uncontrolled access to object data.\par
+\par
+\pard\b\fs26 8.2 Inheritance\b0\fs24\par
+\par
+\pard Inheritance is used through the Course class hierarchy.\par
+\par
+\f1\fs20 Course\par
+\f1\fs20   CoreCourse\par
+\f1\fs20   ElectiveCourse\par
+\par
+\pard CoreCourse and ElectiveCourse inherit common course properties from Course but provide their own course category.\par
+\par
+\pard\b\fs26 8.3 Polymorphism\b0\fs24\par
+\par
+\pard Polymorphism is used in two main places:\par
+\par
+\pard\li360 1. `getCategory()` is implemented differently in `CoreCourse` and `ElectiveCourse`.\par\pard
+\pard\li360 2. `TranscriptFormatter` has different implementations:\par\pard
+\pard    - OfficialTranscriptFormatter\par
+\pard    - UnofficialTranscriptFormatter\par
+\par
+\pard The GUI can call formatter.format(transcript) without needing to know the exact formatter implementation.\par
+\par
+\pard\b\fs26 8.4 Abstraction\b0\fs24\par
+\par
+\pard Abstraction is used through:\par
+\par
+\pard\li360\fi-180 ? The abstract `Course` class.\par\pard
+\pard\li360\fi-180 ? The `TranscriptFormatter` interface.\par\pard
+\par
+\pard These hide implementation details and define what subclasses or implementations must provide.\par
+\par
+\pard\b\fs26 8.5 Exception Handling\b0\fs24\par
+\par
+\pard The system uses a custom checked exception named InvalidInputException. It is thrown when invalid input is detected, such as:\par
+\par
+\pard\li360\fi-180 ? Blank student ID.\par\pard
+\pard\li360\fi-180 ? Blank student name.\par\pard
+\pard\li360\fi-180 ? Credit hours less than or equal to zero.\par\pard
+\pard\li360\fi-180 ? Score outside 0 to 100.\par\pard
+\pard\li360\fi-180 ? Wrong registrar login details.\par\pard
+\par
+\pard The GUI catches the exception and displays the message using JOptionPane.\par
+\par
+\pard\b\fs26 8.6 Collections\b0\fs24\par
+\par
+\pard The system uses ArrayList to store:\par
+\par
+\pard\li360\fi-180 ? Students in `StudentRepository`.\par\pard
+\pard\li360\fi-180 ? Semester records in `Student`.\par\pard
+\pard\li360\fi-180 ? Course results in `SemesterRecord`.\par\pard
+\par
+\pard\b\fs26 8.7 Event Handling\b0\fs24\par
+\par
+\pard Swing action listeners are used for button actions such as login, adding a student, adding a course result, viewing a transcript, printing, and exporting.\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 9. Implementation Details\b0\fs24\par
+\par
+\pard\b\fs26 9.1 Main Class\b0\fs24\par
+\par
+\pard Main.java starts the application. It launches the Swing interface using SwingUtilities.invokeLater() so the GUI runs on the Event Dispatch Thread.\par
+\par
+\pard\b\fs26 9.2 Model Classes\b0\fs24\par
+\par
+\pard | Class | Description |\par
+\pard |---|---|\par
+\pard | Course | Abstract parent class for all course types. |\par
+\pard | CoreCourse | Represents a core course. |\par
+\pard | ElectiveCourse | Represents an elective course. |\par
+\pard | Grade | Enum that maps scores to grade points. |\par
+\pard | CourseResult | Combines a course with the score and grade earned. |\par
+\pard | SemesterRecord | Stores all course results for one semester. |\par
+\pard | Student | Stores student details and semester records. |\par
+\pard | Transcript | Calculates CGPA and classification for a student. |\par
+\par
+\pard\b\fs26 9.3 Service Classes\b0\fs24\par
+\par
+\pard | Class | Description |\par
+\pard |---|---|\par
+\pard | AuthService | Validates registrar login. |\par
+\pard | StudentRepository | Stores demo students and added students in memory. |\par
+\pard | GpaService | Provides GPA and CGPA helper methods. |\par
+\pard | ClassificationService | Maps CGPA to classification. |\par
+\par
+\pard\b\fs26 9.4 Formatter Classes\b0\fs24\par
+\par
+\pard | Class | Description |\par
+\pard |---|---|\par
+\pard | TranscriptFormatter | Interface for transcript output formatting. |\par
+\pard | OfficialTranscriptFormatter | Produces a detailed official transcript layout. |\par
+\pard | UnofficialTranscriptFormatter | Produces a short GPA summary. |\par
+\par
+\pard\b\fs26 9.5 GUI Classes\b0\fs24\par
+\par
+\pard | Class | Description |\par
+\pard |---|---|\par
+\pard | MainFrame | Main Swing frame with login, student, result, and transcript screens. |\par
+\pard | AppTheme | Centralizes colors, fonts, and button styles. |\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 10. Testing and Validation\b0\fs24\par
+\par
+\pard\b\fs26 10.1 Test Harness\b0\fs24\par
+\par
+\pard A TestHarness class is included to test the GPA and CGPA logic without opening the graphical interface.\par
+\par
+\pard The test creates a student, adds course results, creates a transcript, and prints the semester GPA, CGPA, and classification.\par
+\par
+\pard\b\fs26 10.2 Test Command\b0\fs24\par
+\par
+\pard The test can be run with:\par
+\par
+\f1\fs20 .\\test.bat\par
+\par
+\pard\b\fs26 10.3 Test Output\b0\fs24\par
+\par
+\pard The verified output was:\par
+\par
+\f1\fs20 Semester GPA: 3.50\par
+\f1\fs20 CGPA: 3.50\par
+\f1\fs20 Classification: Second Class Upper\par
+\par
+\pard\b\fs26 10.4 Validation Rules\b0\fs24\par
+\par
+\pard The system validates:\par
+\par
+\pard\li360\fi-180 ? Username and PIN.\par\pard
+\pard\li360\fi-180 ? Student ID.\par\pard
+\pard\li360\fi-180 ? Student name.\par\pard
+\pard\li360\fi-180 ? Programme.\par\pard
+\pard\li360\fi-180 ? Semester name.\par\pard
+\pard\li360\fi-180 ? Course code.\par\pard
+\pard\li360\fi-180 ? Course title.\par\pard
+\pard\li360\fi-180 ? Credit hours.\par\pard
+\pard\li360\fi-180 ? Score range.\par\pard
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 11. User Guide\b0\fs24\par
+\par
+\pard\b\fs26 11.1 Running the Application\b0\fs24\par
+\par
+\pard Double-click:\par
+\par
+\f1\fs20 run.bat\par
+\par
+\pard Or run from PowerShell:\par
+\par
+\f1\fs20 cd C:\\Users\\Administrator\\Desktop\\transcript-generation-system\par
+\f1\fs20 .\\run.bat\par
+\par
+\pard\b\fs26 11.2 Login Details\b0\fs24\par
+\par
+\f1\fs20 Username: registrar\par
+\f1\fs20 PIN: 1234\par
+\par
+\pard\b\fs26 11.3 Adding a Student\b0\fs24\par
+\par
+\pard\li360 1. Log in as registrar.\par\pard
+\pard\li360 2. Click `Add Student`.\par\pard
+\pard\li360 3. Enter the student ID, name, and programme.\par\pard
+\pard\li360 4. Click OK.\par\pard
+\pard\li360 5. Select the student from the list.\par\pard
+\par
+\pard\b\fs26 11.4 Adding Course Results\b0\fs24\par
+\par
+\pard\li360 1. Select a student.\par\pard
+\pard\li360 2. Click `Add Results`.\par\pard
+\pard\li360 3. Enter semester, course code, course title, credit hours, score, and course category.\par\pard
+\pard\li360 4. Click `Add Result`.\par\pard
+\pard\li360 5. The result appears in the table with grade and quality points.\par\pard
+\par
+\pard\b\fs26 11.5 Viewing Transcript\b0\fs24\par
+\par
+\pard\li360 1. Select a student.\par\pard
+\pard\li360 2. Click `View Transcript`.\par\pard
+\pard\li360 3. Choose `Official` or `Unofficial` format.\par\pard
+\pard\li360 4. Use `Print` to print or `Export Text` to save a text file.\par\pard
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 12. Challenges and Solutions\b0\fs24\par
+\par
+\pard | Challenge | Solution |\par
+\pard |---|---|\par
+\pard | Keeping the project modular | The code was separated into model, service, formatter, exception, and GUI packages. |\par
+\pard | Preventing invalid records | A custom exception was used for validation. |\par
+\pard | Showing OOP concepts clearly | The Course hierarchy and formatter interface were used to demonstrate inheritance, polymorphism, and abstraction. |\par
+\pard | Avoiding wrong GPA calculations | GPA and CGPA were calculated from quality points and total credits. |\par
+\pard | Running easily on Windows | run.bat and test.bat scripts were added. |\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 13. Conclusion\b0\fs24\par
+\par
+\pard The Academic Transcript Generation System successfully demonstrates how Object Oriented Programming can be used to solve an academic record management problem. The system allows a registrar to manage students, enter course results, calculate GPA and CGPA, classify degree performance, and generate a transcript.\par
+\par
+\pard The project applies encapsulation, inheritance, polymorphism, abstraction, exception handling, collections, methods, control structures, and event-driven programming. It also demonstrates modular design by separating the code into clear packages.\par
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 14. Recommendations\b0\fs24\par
+\par
+\pard Future improvements may include:\par
+\par
+\pard\li360 1. Adding database storage so student records are saved permanently.\par\pard
+\pard\li360 2. Adding a password-protected administrator account setup.\par\pard
+\pard\li360 3. Exporting transcripts directly to PDF.\par\pard
+\pard\li360 4. Adding transcript search and filtering.\par\pard
+\pard\li360 5. Adding more official grading scales.\par\pard
+\pard\li360 6. Adding a backup and restore feature.\par\pard
+\pard\li360 7. Adding institution branding, logo, and signature areas.\par\pard
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 15. References\b0\fs24\par
+\par
+\pard\li360 1. Oracle. Java Swing Documentation.\par\pard
+\pard\li360 2. Oracle. Java Platform Standard Edition Documentation.\par\pard
+\pard\li360 3. Course material for INF811D Object Oriented Programming.\par\pard
+\pard\li360 4. Project source code: Academic Transcript Generation System.\par\pard
+\par
+\pard\brdrb\brdrs\brdrw10\brsp20\par\pard\par
+\par
+\pard\b\fs30 16. Appendix\b0\fs24\par
+\par
+\pard\b\fs26 Appendix A: Important Source Files\b0\fs24\par
+\par
+\pard | File | Purpose |\par
+\pard |---|---|\par
+\pard | src/com/lawrence/transcript/Main.java | Starts the application. |\par
+\pard | src/com/lawrence/transcript/gui/MainFrame.java | Main GUI screens and event handling. |\par
+\pard | src/com/lawrence/transcript/gui/AppTheme.java | Interface colors and fonts. |\par
+\pard | src/com/lawrence/transcript/model/Course.java | Abstract course class. |\par
+\pard | src/com/lawrence/transcript/model/CoreCourse.java | Core course subclass. |\par
+\pard | src/com/lawrence/transcript/model/ElectiveCourse.java | Elective course subclass. |\par
+\pard | src/com/lawrence/transcript/model/Grade.java | Score to grade conversion. |\par
+\pard | src/com/lawrence/transcript/model/SemesterRecord.java | Semester GPA calculation. |\par
+\pard | src/com/lawrence/transcript/model/Transcript.java | CGPA and classification. |\par
+\pard | src/com/lawrence/transcript/formatter/TranscriptFormatter.java | Formatter interface. |\par
+\pard | src/com/lawrence/transcript/exception/InvalidInputException.java | Custom validation exception. |\par
+\par
+\pard\b\fs26 Appendix B: GitHub Upload Commands\b0\fs24\par
+\par
+\f1\fs20 cd C:\\Users\\Administrator\\Desktop\\transcript-generation-system\par
+\f1\fs20 git status\par
+\f1\fs20 git remote -v\par
+\f1\fs20 git push -u origin main\par
+\par
+\pard\b\fs26 Appendix C: Formula Test Output\b0\fs24\par
+\par
+\f1\fs20 Semester GPA: 3.50\par
+\f1\fs20 CGPA: 3.50\par
+\f1\fs20 Classification: Second Class Upper\par
+}
