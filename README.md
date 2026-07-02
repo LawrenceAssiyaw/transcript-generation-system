@@ -85,3 +85,31 @@ The grading scale is implemented in `Grade.fromScore()`:
 - 0-39: F, 0.0
 
 Adjust this file if the institution uses a different official grading scale.
+
+## Upload to GitHub
+
+The project is already a Git repository and the remote is already set to:
+
+```text
+https://github.com/LawrenceAssiyaw/transcript-generation-system.git
+```
+
+Use these steps after signing in to Lawrence's GitHub account or after giving this computer permission to push to the repository:
+
+```powershell
+cd C:\Users\Administrator\Desktop\transcript-generation-system
+git status
+git remote -v
+git push -u origin main
+```
+
+If GitHub rejects the push with `403 Permission denied`, sign in with the correct GitHub account or add the current GitHub user as a collaborator on the repository, then run the push command again.
+
+You can also upload manually from GitHub in the browser:
+
+1. Open the repository on GitHub.
+2. Click `Add file`.
+3. Click `Upload files`.
+4. Drag the project files and folders from `C:\Users\Administrator\Desktop\transcript-generation-system`.
+5. Write a commit message such as `Build transcript generation system`.
+6. Click `Commit changes`.

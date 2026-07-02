@@ -100,10 +100,14 @@ public class MainFrame extends JFrame {
         JButton loginButton = new JButton("Login");
         AppTheme.styleButton(loginButton);
 
-        addFormRow(form, 0, AppTheme.title("Registrar Login"), null);
-        addFormRow(form, 1, new JLabel("Username"), usernameField);
-        addFormRow(form, 2, new JLabel("PIN"), pinField);
-        addFormRow(form, 3, new JLabel(""), loginButton);
+        JLabel projectTitle = AppTheme.title("Academic Transcript Generation System");
+        JLabel loginTitle = AppTheme.section("Registrar Login");
+        loginTitle.setFont(AppTheme.SECTION_FONT.deriveFont(java.awt.Font.BOLD, 21f));
+        addFormRow(form, 0, projectTitle, null);
+        addFormRow(form, 1, loginTitle, null);
+        addFormRow(form, 2, new JLabel("Username"), usernameField);
+        addFormRow(form, 3, new JLabel("PIN"), pinField);
+        addFormRow(form, 4, new JLabel(""), loginButton);
 
         loginButton.addActionListener(event -> {
             try {
