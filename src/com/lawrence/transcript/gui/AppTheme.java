@@ -10,14 +10,15 @@ import java.awt.Font;
 public final class AppTheme {
     public static final Color BACKGROUND = new Color(244, 247, 251);
     public static final Color SURFACE = Color.WHITE;
-    public static final Color PRIMARY = new Color(22, 72, 99);
+    public static final Color PRIMARY = new Color(37, 99, 235);
     public static final Color ACCENT = new Color(31, 128, 112);
     public static final Color TEXT = new Color(31, 41, 55);
     public static final Color MUTED = new Color(99, 115, 129);
 
-    public static final Font TITLE_FONT = new Font("Segoe UI", Font.BOLD, 24);
-    public static final Font SECTION_FONT = new Font("Segoe UI", Font.BOLD, 18);
-    public static final Font BODY_FONT = new Font("Segoe UI", Font.PLAIN, 14);
+    public static final Font TITLE_FONT = new Font("Segoe UI", Font.BOLD, 28);
+    public static final Font SECTION_FONT = new Font("Segoe UI", Font.BOLD, 20);
+    public static final Font BODY_FONT = new Font("Segoe UI", Font.PLAIN, 16);
+    public static final Font BUTTON_FONT = new Font("Segoe UI", Font.BOLD, 16);
 
     private AppTheme() {
     }
@@ -37,19 +38,18 @@ public final class AppTheme {
     }
 
     public static void styleButton(JButton button) {
-        button.setFont(BODY_FONT);
+        button.setFont(BUTTON_FONT);
         button.setFocusPainted(false);
+        button.setOpaque(true);
+        button.setContentAreaFilled(true);
+        button.setBorderPainted(false);
         button.setBackground(PRIMARY);
         button.setForeground(Color.WHITE);
-        button.setBorder(BorderFactory.createEmptyBorder(8, 14, 8, 14));
+        button.setBorder(BorderFactory.createEmptyBorder(10, 18, 10, 18));
     }
 
     public static void styleSecondaryButton(JButton button) {
-        button.setFont(BODY_FONT);
-        button.setFocusPainted(false);
-        button.setBackground(new Color(226, 232, 240));
-        button.setForeground(TEXT);
-        button.setBorder(BorderFactory.createEmptyBorder(8, 14, 8, 14));
+        styleButton(button);
     }
 
     public static void pad(JComponent component) {

@@ -415,12 +415,16 @@ public class MainFrame extends JFrame {
         labelConstraints.gridy = row;
         labelConstraints.anchor = GridBagConstraints.WEST;
         labelConstraints.insets = new Insets(7, 7, 7, 12);
+        if (input != null) {
+            label.setFont(AppTheme.BODY_FONT.deriveFont(java.awt.Font.BOLD));
+        }
         if (label instanceof JLabel) {
             ((JLabel) label).setHorizontalAlignment(SwingConstants.LEFT);
         }
         panel.add(label, labelConstraints);
 
         if (input != null) {
+            input.setFont(AppTheme.BODY_FONT);
             GridBagConstraints inputConstraints = new GridBagConstraints();
             inputConstraints.gridx = 1;
             inputConstraints.gridy = row;
