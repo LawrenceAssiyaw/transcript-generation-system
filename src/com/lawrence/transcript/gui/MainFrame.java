@@ -70,6 +70,7 @@ public class MainFrame extends JFrame {
         super("Academic Transcript Generation System");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(980, 650));
+        setSize(980, 650);
         setLocationRelativeTo(null);
 
         cards.add(buildLoginPanel(), CARD_LOGIN);
@@ -434,3 +435,5 @@ public class MainFrame extends JFrame {
         JOptionPane.showMessageDialog(this, message, "Validation Error", JOptionPane.ERROR_MESSAGE);
     }
 }
+
+
